@@ -64,22 +64,6 @@ void Manipulator::add_planning_constraint()
     objects.push_back(collision_object2);
 
     //添加钢筋墙面
-    /*
-    moveit_msgs::CollisionObject collision_object1;
-    collision_object1.header.frame_id = move_group->getPlanningFrame();
-    collision_object1.id = "wall";
-
-    shape_msgs::Plane plane2;
-    plane2.coef={1,0,0,0.8};
-    object_pose.position.x=0;
-    object_pose.position.y=0;
-    object_pose.position.z=0;
-    object_pose.orientation.w=1.0;
-    collision_object1.planes.push_back(plane2);
-    collision_object1.plane_poses.push_back(object_pose);
-    collision_object1.operation = collision_object1.ADD;
-    objects.push_back(collision_object1);
-    */
     planning_scene_interface->addCollisionObjects(objects);
 }
 void Manipulator::go_up(double velocity_scale)
